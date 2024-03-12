@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "567536485691",
+    "project_id": "office-management-app-3-0",
+    "storage_bucket": "office-management-app-3-0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:567536485691:android:45f3a3610959eb7523e31e",
+        "android_client_info": {
+          "package_name": "com.example.officemanagementapp30"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDSZUzJmHXkgxIGbk_dLOBvPh6RX9VAOiM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
