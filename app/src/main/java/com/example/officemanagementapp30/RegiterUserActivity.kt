@@ -24,17 +24,14 @@ class RegiterUserActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register_user)
 
-        // Инициализация элементов интерфейса
         emailEditText = findViewById(R.id.email_input_reg)
         passwordEditText = findViewById(R.id.password_input_reg)
         confirmPasswordEditText = findViewById(R.id.password_input_repeat_reg)
         registerButton = findViewById(R.id.register_button)
         val backToLoginTextView: TextView = findViewById(R.id.back_to_login_text_view)
 
-        // Инициализация Firebase Authentication
         auth = FirebaseAuth.getInstance()
 
-        // Обработчик нажатия на кнопку регистрации
         registerButton.setOnClickListener {
             val email = emailEditText.text.toString()
             val password = passwordEditText.text.toString()
@@ -42,19 +39,15 @@ class RegiterUserActivity : AppCompatActivity() {
 
             if (email.isNotEmpty() && password.isNotEmpty() && confirmPassword.isNotEmpty()) {
                 if (password == confirmPassword) {
-                    // Попытка регистрации нового пользователя через Firebase
                     auth.createUserWithEmailAndPassword(email, password)
                         .addOnCompleteListener(this) { task ->
                             if (task.isSuccessful) {
-                                // Регистрация успешна
                                 Toast.makeText(this, "Регистрация успешна", Toast.LENGTH_SHORT).show()
-                                // Вместо комментария "Дополнительные действия при успешной авторизации/регистрации"
                                 val intent = Intent(this, MainActivity::class.java)
                                 intent.putExtra("user_email", email)
                                 startActivity(intent)
-                                finish() // Опционально, чтобы закрыть текущую активность
+                                finish()
                             } else {
-                                // В случае ошибки выводим сообщение
                                 when (task.exception) {
                                     is FirebaseAuthUserCollisionException -> {
                                         Toast.makeText(this, "Пользователь с таким email уже зарегистрирован", Toast.LENGTH_SHORT).show()

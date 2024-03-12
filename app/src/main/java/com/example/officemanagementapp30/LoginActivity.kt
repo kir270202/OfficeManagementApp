@@ -23,40 +23,32 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-        // Инициализация элементов интерфейса
         emailEditText = findViewById(R.id.email_input)
         passwordEditText = findViewById(R.id.password_input)
         loginButton = findViewById(R.id.login_button)
         val registerTextView: TextView = findViewById(R.id.register_text_view)
 
-        // Инициализация Firebase Authentication
         auth = FirebaseAuth.getInstance()
 
         if (auth.currentUser != null) {
-            // Пользователь авторизован, перейдем на основную активити
             startActivity(Intent(this, MainActivity::class.java))
             finish()
         }
 
-        // Обработчик нажатия на кнопку авторизации
         loginButton.setOnClickListener {
             val email = emailEditText.text.toString()
             val password = passwordEditText.text.toString()
 
             if (email.isNotEmpty() && password.isNotEmpty()) {
-                // Попытка авторизации через Firebase
                 auth.signInWithEmailAndPassword(email, password)
                     .addOnCompleteListener(this) { task ->
                         if (task.isSuccessful) {
-                            // Авторизация успешна
                             Toast.makeText(this, "Авторизация успешна", Toast.LENGTH_SHORT).show()
-                            // Вместо комментария "Дополнительные действия при успешной авторизации/регистрации"
                             val intent = Intent(this, MainActivity::class.java)
                             intent.putExtra("user_email", email)
                             startActivity(intent)
-                            finish() // Опционально, чтобы закрыть текущую активность
+                            finish()
                         } else {
-                            // В случае ошибки выводим сообщение
                             when (task.exception) {
                                 is FirebaseAuthInvalidUserException -> {
                                     Toast.makeText(this, "Пользователь с таким email не найден", Toast.LENGTH_SHORT).show()
