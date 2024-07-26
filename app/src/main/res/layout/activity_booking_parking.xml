@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BookingActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="16dp">
+
+        <ImageButton
+            android:id="@+id/buttonBackBooking"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_back_arrow_black"
+            android:contentDescription="Назад"
+            android:layout_gravity="left"/>
+
+        <TextView
+            android:id="@+id/textViewBookingDetails"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Детали бронирования"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/textViewConferenceRoomNameBooking"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Номер парковочного места"
+            android:textSize="18sp"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"/>
+
+        <CalendarView
+            android:id="@+id/datePickerBooking"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:calendarViewShown="true"
+            android:minDate="1/1/2024"
+            android:maxDate="1/1/2026"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/rounded_corner"/>
+
+
+
+        <Switch
+            android:id="@+id/switchAddToCalendar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Добавить событие в календарь"
+            android:layout_gravity="left"
+            android:layout_marginTop="10dp"/>
+
+        <Switch
+            android:id="@+id/switchNotification"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Уведомления"
+            android:layout_gravity="left"
+            android:layout_marginTop="10dp"/>
+
+        <!-- Поле для ввода комментариев -->
+        <EditText
+            android:id="@+id/editTextLicensePlate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Введите номер автомобиля"
+            android:inputType="textMultiLine"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/rounded_corner"/>
+
+        <!-- Кнопка для бронирования -->
+        <Button
+            android:id="@+id/buttonBook"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Забронировать"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="#E6E6E6"
+            android:background="@drawable/rounded_corner"/>
+
+    </LinearLayout>
+
+</ScrollView>

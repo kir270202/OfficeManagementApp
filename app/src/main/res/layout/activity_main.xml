@@ -64,7 +64,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Рабочее место"
+                        android:text="Мои бронирования"
                         android:textSize="20sp"
                         android:textColor="@color/black">
                     </TextView>
@@ -80,6 +80,7 @@
                             android:layout_marginEnd="20dp"
                             android:src="@mipmap/ic_open_space_1"
                             app:shapeAppearanceOverlay="@style/circular"
+                            android:id="@+id/mainActivityBookingImage1"
                             >
 
                         </com.google.android.material.imageview.ShapeableImageView>
@@ -90,6 +91,7 @@
                             android:layout_marginEnd="20dp"
                             android:src="@mipmap/ic_open_space_2_2"
                             app:shapeAppearanceOverlay="@style/circular"
+                            android:id="@+id/mainActivityBookingImage2"
                             >
 
                         </com.google.android.material.imageview.ShapeableImageView>
@@ -100,11 +102,13 @@
                             android:layout_marginEnd="20dp"
                             android:src="@mipmap/ic_open_space_3"
                             app:shapeAppearanceOverlay="@style/circular"
+                            android:id="@+id/mainActivityBookingImage3"
                             >
 
                         </com.google.android.material.imageview.ShapeableImageView>
 
                         <ImageView
+                            android:id="@+id/imageViewAddBooking"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:src="@drawable/ic_baseline_add_box_24">
@@ -117,15 +121,310 @@
 
             </androidx.cardview.widget.CardView>
 
-            <com.google.android.material.card.MaterialCardView
-                xmlns:android="http://schemas.android.com/apk/res/android"
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                app:cardCornerRadius="8dp">
 
-                >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
 
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Парковочные места"
+                        android:textSize="20sp"
+                        android:textColor="@color/black">
+                    </TextView>
 
-            </com.google.android.material.card.MaterialCardView>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/buttonParkingBooking"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Забронировать"
+                            android:backgroundTint="#E6E6E6"
+                            android:background="@drawable/rounded_corner"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Мероприятия и объявления"
+                        android:textSize="20sp"
+                        android:textColor="@color/black">
+                    </TextView>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cardViewEvent1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="8dp"
+                            app:cardCornerRadius="8dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Автор_1:"
+                                    android:textSize="15sp"
+                                    android:textColor="@color/black"
+                                    android:gravity="center"
+                                    android:id="@+id/textViewAuthorEvent1">
+                                </TextView>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Название мероприятия_1"
+                                    android:textSize="15sp"
+                                    android:textColor="@color/black"
+                                    android:gravity="center"
+                                    android:id="@+id/textViewNameEvent1">
+                                </TextView>
+
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cardViewEvent2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="8dp"
+                            app:cardCornerRadius="8dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Автор_2:"
+                                    android:textSize="15sp"
+                                    android:textColor="@color/black"
+                                    android:gravity="center"
+                                    android:id="@+id/textViewAuthorEvent2">
+                                </TextView>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Название мероприятия_2"
+                                    android:textSize="15sp"
+                                    android:textColor="@color/black"
+                                    android:gravity="center"
+                                    android:id="@+id/textViewNameEvent2">
+                                </TextView>
+
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cardViewEvent3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="8dp"
+                            app:cardCornerRadius="8dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Автор_3:"
+                                    android:textSize="15sp"
+                                    android:textColor="@color/black"
+                                    android:gravity="center"
+                                    android:id="@+id/textViewAuthorEvent3">
+                                </TextView>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Название мероприятия_3"
+                                    android:textSize="15sp"
+                                    android:textColor="@color/black"
+                                    android:gravity="center"
+                                    android:id="@+id/textViewNameEvent3">
+                                </TextView>
+
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cardViewEvent4"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="8dp"
+                            app:cardCornerRadius="8dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Автор_4:"
+                                    android:textSize="15sp"
+                                    android:textColor="@color/black"
+                                    android:gravity="center"
+                                    android:id="@+id/textViewAuthorEvent4">
+                                </TextView>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Название мероприятия_4"
+                                    android:textSize="15sp"
+                                    android:textColor="@color/black"
+                                    android:gravity="center"
+                                    android:id="@+id/textViewNameEvent4">
+                                </TextView>
+
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cardViewEvent5"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="8dp"
+                            app:cardCornerRadius="8dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Автор_5:"
+                                    android:textSize="15sp"
+                                    android:textColor="@color/black"
+                                    android:gravity="center"
+                                    android:id="@+id/textViewAuthorEvent5">
+                                </TextView>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Название мероприятия_5"
+                                    android:textSize="15sp"
+                                    android:textColor="@color/black"
+                                    android:gravity="center"
+                                    android:id="@+id/textViewNameEvent5">
+                                </TextView>
+
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                        <GridLayout
+                            xmlns:android="http://schemas.android.com/apk/res/android"
+                            android:id="@+id/buttonsEventsGrid"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:columnCount="2"
+                            android:orientation="horizontal"
+                            android:padding="16dp">
+
+                            <Button
+                                android:id="@+id/buttonViewMoreEvents"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Посмотреть больше"
+                                android:backgroundTint="#E6E6E6"
+                                android:background="@drawable/rounded_corner"
+                                android:layout_marginEnd="16dp"/> <!-- Добавляем отступ справа -->
+
+                            <Button
+                                android:id="@+id/buttonAddEvent"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Добавить"
+                                android:backgroundTint="#E6E6E6"
+                                android:background="@drawable/rounded_corner"/> <!-- Добавляем отступ слева -->
+
+                        </GridLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Меню кафетерии"
+                        android:textSize="20sp"
+                        android:textColor="@color/black"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="16dp">
+                    </TextView>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/buttonViewCafeteriaMenu"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Открыть"
+
+                            android:backgroundTint="#E6E6E6"
+                            android:background="@drawable/rounded_corner"
+                            android:layout_gravity="center"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
 
         </LinearLayout>
 
